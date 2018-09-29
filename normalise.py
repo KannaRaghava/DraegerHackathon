@@ -14,7 +14,7 @@ def image_normalisation(raw_data, data_path, height, width):
             print(class_name)
             path = os.path.join(data_path, class_labels[category_count])
             for image in images:
-                im = cv2.imread(class_name + '\\' + image)
+                im = cv2.imread(os.path.join(class_name, image))
                 im = cv2.resize(im, (height, width))
                 if not os.path.exists(path):
                     os.makedirs(path)
