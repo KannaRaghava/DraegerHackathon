@@ -1,12 +1,13 @@
 import Augmentor
 import os
 
+
 def generation(source_folder, dest_folder):
     dest_folder = os.path.dirname(os.path.realpath(__file__)) + '/' + dest_folder
     print(dest_folder)
 
     # Get folder with images
-    p = Augmentor.Pipeline(source_folder, output_directory=dest_folder, save_format="jpg")
+    p = Augmentor.Pipeline(source_folder, output_directory=dest_folder, save_format='jpg')
 
     # Apply some operations on it with specific probabilities
     # -> Rotation
@@ -22,7 +23,7 @@ def generation(source_folder, dest_folder):
     p.random_distortion(probability=0.1, grid_height=16, grid_width=16, magnitude=6)
 
     # Generate a specific amount of samples
-    p.sample(200)
+    p.sample(10)
 
 
 if __name__ == '__main__':

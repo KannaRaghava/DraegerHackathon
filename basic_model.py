@@ -1,7 +1,7 @@
 import tensorflow as tf
 
 
-class model:
+class BasicModel:
 
     def add_weights(self, shape):
         # To create all weight connections
